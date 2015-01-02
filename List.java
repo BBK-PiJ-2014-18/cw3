@@ -44,7 +44,7 @@ public interface List {
 	 * @return the element or an appropriate error message, 
 	 *         encapsulated in a ReturnObject
 	 */
-//	public ReturnObject get(int index);
+	public ReturnObject get(int index);
 
 	/**
 	 * Returns the elements at the given position and removes it
