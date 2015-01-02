@@ -25,14 +25,14 @@ public interface List {
 	 * 
 	 * @return true if the list is empty, false otherwise. 
 	 */
-	public boolean isEmpty();
+//	public boolean isEmpty();
 
 	/**
 	 * Returns the number of items currently in the list.
 	 * 
 	 * @return the number of items currently in the list
 	 */
-	public int size();
+//	public int size();
 
 	/**
 	 * Returns the elements at the given position. 
@@ -44,7 +44,7 @@ public interface List {
 	 * @return the element or an appropriate error message, 
 	 *         encapsulated in a ReturnObject
 	 */
-	public ReturnObject get(int index);
+//	public ReturnObject get(int index);
 
 	/**
 	 * Returns the elements at the given position and removes it
@@ -58,7 +58,7 @@ public interface List {
 	 * @return the element or an appropriate error message, 
 	 *         encapsulated in a ReturnObject
 	 */
-	public ReturnObject remove(int index);
+//	public ReturnObject remove(int index);
 
 	/**
 	 * Adds an element to the list, inserting it at the given
@@ -78,7 +78,7 @@ public interface List {
 	 * @return an ReturnObject, empty if the operation is successful
 	 *         the item added or containing an appropriate error message
 	 */
-	public ReturnObject add(int index, Object item);
+//	public ReturnObject add(int index, Object item);
 
 	/**
 	 * Adds an element at the end of the list.
