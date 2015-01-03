@@ -25,7 +25,7 @@ public interface List {
 	 * 
 	 * @return true if the list is empty, false otherwise. 
 	 */
-//	public boolean isEmpty();
+	public boolean isEmpty();
 
 	/**
 	 * Returns the number of items currently in the list.
