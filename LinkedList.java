@@ -3,27 +3,26 @@ public class LinkedList implements List {
 	private Object item;
 	private LinkedList nextItem;
 
-/*
-	public boolean isEmpty() {
-	}
 
+	public boolean isEmpty() {
+		if(this.nextItem == null) {
+			return true;
+		} else {
+			return false;
+		}	
+	}
+/*
 	public int size() {
 	}
 */
 	public ReturnObject get(int index) {	
-		
 		int currentNode = 0;
-		if(index == 0) {
-			ReturnObject result = new ReturnObjectImpl(this.nextItem.item);
-			return result;
-		}
 		LinkedList currentItem = this.nextItem;
 		while (currentNode < index) {
 			currentItem = currentItem.nextItem;
 			currentNode++;
 		}
-		ReturnObject result = new ReturnObjectImpl(currentItem.item);
-		return result;
+		return new ReturnObjectImpl(currentItem.item);
 	}
 
 /*
@@ -35,11 +34,10 @@ public class LinkedList implements List {
 */
 
 	public ReturnObject add(Object item) {
-	
 		ReturnObject result = new ReturnObjectImpl(item);
 		LinkedList newNode = new LinkedList();
 		newNode.item = item;
-		if(this.nextItem == null) {
+		if(this.isEmpty()) {
 			this.nextItem = newNode;
 			return result;
 		}	
