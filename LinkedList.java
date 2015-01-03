@@ -22,7 +22,8 @@ public class LinkedList implements List {
 			currentItem = currentItem.nextItem;
 			currentNode++;
 		}
-		return new ReturnObjectImpl(currentItem.item);
+		ReturnObject result = new ReturnObjectImpl(currentItem.item);
+		return result;
 	}
 
 /*
