@@ -8,13 +8,9 @@ public class ReturnObjectImpl implements ReturnObject {
 		this.content = null;
 	}
 	
-	
-	//setter
 	public ReturnObjectImpl (Object item) {
 		this.content = item;
 	}	
-	
-	
 	
 	public boolean hasError() {
 	
