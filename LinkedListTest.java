@@ -9,11 +9,13 @@ public class LinkedListTest {
 	
 		System.out.println("We work again... xmas is over...");
 		List ll = new LinkedList();
+		System.out.println("Check for empty list: " + ll.isEmpty());
 		String myStr = "my first string";
 		ReturnObject result1 = new ReturnObjectImpl();
 		result1 = ll.add(myStr);
 		String output1 = (String) result1.getReturnValue();
 		System.out.println("added: " + output1);
+		System.out.println("Check for empty list: " + ll.isEmpty());
 		int myInt = 2015;
 		ReturnObject result2 = new ReturnObjectImpl();
 		result2 = ll.add(myInt);
