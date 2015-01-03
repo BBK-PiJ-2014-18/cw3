@@ -1,8 +1,8 @@
 public class ListTest {
 
 	public static void main(String[] args) {
-		LinkedListTest llt = new LinkedListTest();
-		llt.launch();
+		ListTest myListTest = new ListTest();
+		myListTest.launch();
 	}
 
 	public void launch() {
