@@ -1,5 +1,10 @@
 public class SampleableListImpl implements SampleableList {
 
+	private List internalList;
+	
+	public SampleableListImpl(List list) {
+		this.internalList = list;
+	}	
 
 	/**
 	 * Returns tue if the list is empty, false otherwise. 
@@ -8,7 +13,7 @@ public class SampleableListImpl implements SampleableList {
 	 */
 	@Override 
 	public boolean isEmpty() {
-		return this.isEmpty();
+		return internalList.isEmpty();
 	}	
 	
 	/**
@@ -19,7 +24,7 @@ public class SampleableListImpl implements SampleableList {
 	 
 	@Override
 	public int size() {
-		return this.size();
+		return internalList.size();
 	}	
 
 	/**
@@ -35,7 +40,7 @@ public class SampleableListImpl implements SampleableList {
 
 	@Override 
 	public ReturnObject get(int index) {
-		return this.get(index);
+		return internalList.get(index);
 	}	
 
 	/**
@@ -53,7 +58,7 @@ public class SampleableListImpl implements SampleableList {
 
 	@Override
 	public ReturnObject remove(int index) {
-		return this.remove(index);
+		return internalList.remove(index);
 	}	
 
 	/**
@@ -90,15 +95,18 @@ public class SampleableListImpl implements SampleableList {
 	
 	@Override	
 	public ReturnObject add(Object item) {
-		return this.add(item);
+		return internalList.add(item);
 	}
 
 	public SampleableList sample() {
-		SampleableList result = this;
 		
+		List temp = new ArrayList();
+		for (int i = 1; i < internalList.size() ; i = i + 2) {
+			temp.add(internalList.get(i).getReturnValue());
+		}
+		SampleableList result = new SampleableListImpl(temp);	
 		return result;
 	}
-
 
 }
 

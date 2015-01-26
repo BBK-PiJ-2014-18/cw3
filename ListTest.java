@@ -10,9 +10,9 @@ public class ListTest {
 		System.out.println("=== Testing LINKED LIST===");
 		List ll = new LinkedList();
 		test(ll);
-//		System.out.println("=== Testing ARRAY LIST===");
-//		List al = new ArrayList();
-//		test(al);
+		System.out.println("=== Testing ARRAY LIST===");
+		List al = new ArrayList();
+		test(al);
 //		System.out.println("=== Testing FUNCTIONAL ARRAY LIST===");
 //		FunctionalList fal = new FunctionalArrayList();
 //		test(fal);
@@ -82,13 +82,38 @@ public class ListTest {
 		getback2 = tl.get(2);
 		System.out.println("r2 got back: " + getback2.getReturnValue());
 		System.out.println("*********************************");
-		SampleableList sl = new SampleableListImpl();
-		sl.sample();
-		getback2 = tl.get(0);
-		System.out.println("sl 0 got back: " + getback2.getReturnValue());		
-		getback2 = tl.get(1);
-		System.out.println("sl 1 got back: " + getback2.getReturnValue());		
 	
-				
+		
+		//THIS
+		
+		SampleableList ls = new SampleableListImpl(tl);
+		SampleableList rs = ls.sample();
+		
+		//OR (AND I GUESS!!!) THIS
+		
+//		SammpleableList ls2 = new SampleAbleListImpl();
+		// and constructor makes an empty array list for internalList
+//		ls2.add(99);
+//		ls2.add(100);
+//		SampleableList rs = ls.sample();
+		
+		
+		
+		
+		getback2 = rs.get(0);
+		System.out.println("s0 0 got back: " + getback2.getReturnValue());		
+		getback2 = rs.get(1);
+		System.out.println("sl 1 got back: " + getback2.getReturnValue());
+		getback2 = rs.get(2);
+		System.out.println("sl 2 got back: " + getback2.getReturnValue());		
+		System.out.println("DONE SAMPLE- removes(1) =========>>>>>>>>");	
+		System.out.println("r0 got back: " + getback0.getReturnValue());
+		getback1 = tl.get(1);
+		System.out.println("r1 got back: " + getback1.getReturnValue());
+		getback2 = tl.get(2);
+		System.out.println("r2 got back: " + getback2.getReturnValue());
+		System.out.println("*********************************");
+		
+	
 	}
 }
