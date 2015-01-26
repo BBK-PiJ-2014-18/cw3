@@ -10,10 +10,32 @@ public class ListTest {
 		System.out.println("=== Testing LINKED LIST===");
 		List ll = new LinkedList();
 		test(ll);
-		System.out.println("=== Testing ARRAY LIST===");
-		List al = new ArrayList();
-		test(al);	
+//		System.out.println("=== Testing ARRAY LIST===");
+//		List al = new ArrayList();
+//		test(al);
+//		System.out.println("=== Testing FUNCTIONAL ARRAY LIST===");
+//		FunctionalList fal = new FunctionalArrayList();
+//		test(fal);
+//		testFL(fal);
+//		System.out.println("=== Testing FUNCTIONAL LINKED LIST===");
+//		FunctionalList fll = new FunctionalLinkedList();
+//		test(fll);
+//		testFL(fll);
 	}
+
+	public void testFL(FunctionalList tl) {
+		System.out.println("=== TestFL===");
+		ReturnObject result = new ReturnObjectImpl();
+		result = tl.head();
+		System.out.println("Head is: " + result.getReturnValue());
+		FunctionalList flRest = new FunctionalLinkedList();
+		flRest = tl.rest();
+		System.out.println("rest 0: " + flRest.get(0).getReturnValue());
+		System.out.println("rest 1: " + flRest.get(1).getReturnValue());
+		System.out.println("before delete outside... " + tl.get(0).getReturnValue());
+		tl.remove(0);
+		System.out.println("before after outside... " + tl.get(0).getReturnValue());
+	}	
 
 	public void test(List tl) {	
 		System.out.println("Check for empty list: " + tl.isEmpty());
@@ -38,7 +60,6 @@ public class ListTest {
 		result4 = tl.add(myInt);
 		output2 = (int) result4.getReturnValue();
 		System.out.println("added " + output2);
-		System.out.println("======");
 		ReturnObject getback0 = new ReturnObjectImpl();
 		getback0 = tl.get(0);
 		System.out.println("got back: " + getback0.getReturnValue());
@@ -50,6 +71,24 @@ public class ListTest {
 		System.out.println("got back: " + getback2.getReturnValue());
 		ReturnObject getback3 = new ReturnObjectImpl();
 		getback3 = tl.get(3);
-		System.out.println("got back: " + getback3.getReturnValue());		
+		System.out.println("got back: " + getback3.getReturnValue());
+		ReturnObject getback4 = new ReturnObjectImpl();
+		getback4 = tl.remove(3);
+		System.out.println("removed: " + getback4.getReturnValue());
+		getback0 = tl.get(0);
+		System.out.println("r0 got back: " + getback0.getReturnValue());
+		getback1 = tl.get(1);
+		System.out.println("r1 got back: " + getback1.getReturnValue());
+		getback2 = tl.get(2);
+		System.out.println("r2 got back: " + getback2.getReturnValue());
+		System.out.println("*********************************");
+		SampleableList sl = new SampleableListImpl();
+		sl.sample();
+		getback2 = tl.get(0);
+		System.out.println("sl 0 got back: " + getback2.getReturnValue());		
+		getback2 = tl.get(1);
+		System.out.println("sl 1 got back: " + getback2.getReturnValue());		
+	
+				
 	}
 }

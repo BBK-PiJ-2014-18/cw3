@@ -7,27 +7,21 @@ public class ReturnObjectImpl implements ReturnObject {
 	public ReturnObjectImpl () {
 		this.content = null;
 	}
-	
-	public ReturnObjectImpl (Object item) {
-		this.content = item;
+
+	public ReturnObjectImpl (Object content) {
+		this.content = content;
 	}	
 	
 	public boolean hasError() {
-	
 		return true;
 	}
 
 	public ErrorMessage getError() {
-		
 		return ErrorMessage.NO_ERROR;	
-	
 	}
 
-	public Object getReturnValue() {
-	
-		return this.content;
-	
+	public Object getReturnValue() {		
+		return content;
 	}
-
 
 }
