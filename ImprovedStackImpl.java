@@ -2,37 +2,36 @@ public class ImprovedStackImpl implements ImprovedStack {
 
 	// should i have an internalStackImpl?????????????
 
-	private List internalList;
+	private Stack internalStack;
 	
 	public ImprovedStackImpl (List list) {
-		this.internalList = list;
+		this.internalStack = new StackImpl(list);
 	}
 
 	public boolean isEmpty() {
-		return internalList.isEmpty();
+		return internalStack.isEmpty();
 	}
 
 	public int size() {
-		return internalList.size();
+		return internalStack.size();
 	}
 
 	public void push(Object item) {
-		internalList.add(item);
+		internalStack.push(item);
 	}
 
 	public ReturnObject top() {
-		return internalList.get(0);
+		return internalStack.top();
 	}
 
 	public ReturnObject pop() {
-		return internalList.remove(0);
+		return internalStack.pop();
 	}
-
 
 	public ImprovedStack reverse() {
 		List temp = new ArrayList();
-		for (int i = internalList.size(); i >= 0; i--) {
-			temp.add(internalList.get(i).getReturnValue());
+		for (int i = internalStack.size(); i >= 0; i--) {
+			temp.add(internalStack.pop().getReturnValue());
 		} 
 		ImprovedStack result = new ImprovedStackImpl(temp);
 		return result;
