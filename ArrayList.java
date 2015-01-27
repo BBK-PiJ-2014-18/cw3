@@ -48,7 +48,7 @@ public class ArrayList implements List {
 		if(checkItem(item).hasError()) {
 			return checkItem(item);
 		}
-		if(top == items.length + 1) {
+		if(top + 1 == items.length) {
 			growArray();
 		}		
 		for (int i = top; i > index; i--) {
@@ -74,8 +74,8 @@ public class ArrayList implements List {
 	// TODO JavaDoc
 
 	private void growArray() {
-		Object[] temp = new Object[top * 2];
-		for (int i = 0; i < items.length; i++) {
+		Object[] temp = new Object[items.length * 2];
+		for (int i = 0; i < top; i++) {
 			temp[i] = items[i];
 		}
 		items = temp;	

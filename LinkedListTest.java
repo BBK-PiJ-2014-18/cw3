@@ -269,17 +269,39 @@ public class LinkedListTest {
 	}
 	
 	@Test
-	public void testGrowingLargeListWorks() {
+	public void testGrowingLargeListWorksWithBasicAdd() {
 		ReturnObject itemAdded;
 		for (int i = 1; i <= 1000; i++) {
 			itemAdded = list.add(i);
 		}
 		assertEquals(1, list.get(0).getReturnValue());
+		assertEquals(10, list.get(9).getReturnValue());
+		assertEquals(11, list.get(10).getReturnValue());
+		assertEquals(12, list.get(11).getReturnValue());
 		assertEquals(500, list.get(499).getReturnValue());
 		assertEquals(1000, list.get(999).getReturnValue());	
 		assertEquals(1000, list.size());
 	}	
+	
+	@Test
+	public void testGrowingLargeListWorksWithAddAtIndex() {
+		ReturnObject itemAdded = list.add(1);
+		itemAdded = list.add(2);
+		itemAdded = list.add(999);
+		for (int i = 998; i >= 3; i--) {
+			itemAdded = list.add(2,i);
+		}
+		assertEquals(1, list.get(0).getReturnValue());
+		assertEquals(10, list.get(9).getReturnValue());
+		assertEquals(11, list.get(10).getReturnValue());
+		assertEquals(12, list.get(11).getReturnValue());
+		assertEquals(500, list.get(499).getReturnValue());
+		assertEquals(998, list.get(997).getReturnValue());	
+		assertEquals(999, list.get(998).getReturnValue());	
+		assertEquals(999, list.size());
+	}	
 }
+
 
 
 
