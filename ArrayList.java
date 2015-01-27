@@ -3,7 +3,6 @@ public class ArrayList implements List {
 	private Object[] items = new Object[10];
 	private int top = 0;
 	
-	
 	public boolean isEmpty() {
 		if(top == 0) {
 			return true;
