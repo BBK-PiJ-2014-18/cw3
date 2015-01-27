@@ -5,14 +5,14 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.assertFalse;
 
-public class LinkedListTest {
+public class ArrayListTest {
 
 	private List list;
 
 	
 	@Before
 	public void setUp() {
-		list = new LinkedList();
+		list = new ArrayList();
 	}
 	
 	//testing can add different types of item.
