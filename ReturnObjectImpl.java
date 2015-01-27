@@ -4,11 +4,11 @@ public class ReturnObjectImpl implements ReturnObject {
 	private Object content;
 	private ErrorMessage error;
 	
-	//constructor - delete this constructor
-	public ReturnObjectImpl () {
-		this.content = null;
-		this.error = null;
-	}
+//	//constructor - delete this constructor
+//	public ReturnObjectImpl () {
+//		this.content = null;
+//		this.error = null;
+//	}
 
 	public ReturnObjectImpl (Object content) {
 		this.content = content;
