@@ -5,13 +5,14 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.assertFalse;
 
-public class LinkedListTest {
+public class SampleableListImplTest {
 
-	private List list;
+	private SampleableList list;
+
 	
 	@Before
 	public void setUp() {
-		list = new LinkedList();
+		list = new SampleableListImpl();
 	}
 	
 	//testing can add different types of item.
@@ -154,14 +155,14 @@ public class LinkedListTest {
 	public void testRemoveWhenIndexOutOfBoundsTooHigh() {
 		ReturnObject itemAdded = list.add("1st");
 		ReturnObject result = list.remove(1);
-		assertNull("return value is should be null", result.getReturnValue());
+		assertNull("if error, return value is should be null", result.getReturnValue());
 		assertEquals(ErrorMessage.INDEX_OUT_OF_BOUNDS, result.getError());
 	}	
 	
 	@Test
 	public void testRemoveOnEmptyStructure() {
 		ReturnObject result = list.remove(2);
-		assertNull("return value is should be null", result.getReturnValue());
+		assertNull("if error, return value is should be null", result.getReturnValue());
 		assertTrue(result.hasError());
 		assertEquals(ErrorMessage.EMPTY_STRUCTURE, result.getError());
 	}
@@ -308,6 +309,50 @@ public class LinkedListTest {
 		assertEquals(998, list.get(997).getReturnValue());	
 		assertEquals(999, list.get(998).getReturnValue());	
 		assertEquals(999, list.size());
+	}	
+	
+	//test specific to SampleableListimpl
+
+	@Test
+	public void testSampleOnPopulatedList() {
+		ReturnObject itemAdded = list.add("1st");
+		itemAdded = list.add("2nd");
+		itemAdded = list.add("3rd");
+		itemAdded = list.add("4th");
+		itemAdded = list.add("5th");
+		itemAdded = list.add("6th");
+		SampleableList result = list.sample();
+		assertEquals("1st", result.get(0).getReturnValue());
+		assertEquals("3rd", result.get(1).getReturnValue());
+		assertEquals("5th", result.get(2).getReturnValue());
+		assertNull(result.get(3).getReturnValue());
+		assertEquals(ErrorMessage.INDEX_OUT_OF_BOUNDS, result.get(3).getError());
+	}
+
+	@Test
+	public void testGetEmptyListFromListWithNoRest() {
+		SampleableList result = list.sample();
+		assertNull(result.get(0).getReturnValue());
+		assertTrue(result.get(0).hasError());
+		assertEquals(ErrorMessage.EMPTY_STRUCTURE, result.get(0).getError());
+	}
+	
+	@Test
+	public void testSampledListDoesntImpactOriginalList() {
+		ReturnObject itemAdded = list.add("1st");
+		itemAdded = list.add("2nd");
+		itemAdded = list.add("3rd");
+		itemAdded = list.add("4th");
+		itemAdded = list.add("5th");
+		itemAdded = list.add("6th");
+		SampleableList result = list.sample();
+		assertEquals("1st", list.get(0).getReturnValue());
+		assertEquals("2nd", list.get(1).getReturnValue());
+		assertEquals("3rd", list.get(2).getReturnValue());
+		result.remove(1);
+		assertEquals("1st", list.get(0).getReturnValue());
+		assertEquals("2nd", list.get(1).getReturnValue());
+		assertEquals("3rd", list.get(2).getReturnValue());
 	}
 }
 

@@ -20,13 +20,13 @@ public class LinkedList implements List {
 		if(this.isEmpty()) {
 			return 0;
 		} else {
-		LinkedList currentNode = this;
-		int result = 0;
-		while(currentNode.nextNode != null) {
-			currentNode = currentNode.nextNode;
-			result ++;	
-		}			
-		return result;
+			LinkedList currentNode = this;
+			int result = 0;
+			while(currentNode.nextNode != null) {
+				currentNode = currentNode.nextNode;
+				result ++;	
+			}			
+			return result;
 		}
 	}
 

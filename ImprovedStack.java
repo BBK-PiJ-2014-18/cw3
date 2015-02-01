@@ -33,6 +33,6 @@ public interface ImprovedStack extends Stack {
 	 * 
 	 * @param object the object to remove
 	 */
-//	public void remove(Object object);
+	public void remove(Object object);
 }
 

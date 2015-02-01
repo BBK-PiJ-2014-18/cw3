@@ -183,6 +183,17 @@ public class ArrayListTest {
 	//testing add(int index, Object item)
 
 	@Test
+	public void testAddNullThingAtIndexOne() {
+		ReturnObject itemAdded = list.add("1st");
+		itemAdded = list.add("2nd");
+		Object nullThing = null;
+		ReturnObject result = list.add(nullThing);
+		assertNull(result.getReturnValue());
+		assertTrue(result.hasError());
+		assertEquals(ErrorMessage.INVALID_ARGUMENT, result.getError());
+	}	
+
+	@Test
 	public void testAddItemAtIndex1() {
 		ReturnObject itemAdded = list.add("1st");
 		itemAdded = list.add("3rd");

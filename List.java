@@ -78,7 +78,7 @@ public interface List {
 	 * @return an ReturnObject, empty if the operation is successful
 	 *         the item added or containing an appropriate error message
 	 */
-//	public ReturnObject add(int index, Object item);
+	public ReturnObject add(int index, Object item);
 
 	/**
 	 * Adds an element at the end of the list.
