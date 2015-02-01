@@ -62,7 +62,6 @@ public class ListScript {
 		System.out.println("original list 2: " + tl.get(2).getReturnValue());
 	}	
 
-
 	public void testStack(List tl) {
 		Stack ts = new StackImpl(tl);
 		System.out.println("stack sized:" + ts.size());	
