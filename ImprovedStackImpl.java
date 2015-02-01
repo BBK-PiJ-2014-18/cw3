@@ -43,7 +43,7 @@ public class ImprovedStackImpl implements ImprovedStack {
 		List temp = new ArrayList();
 		Object objectToCompare;
 		while(!isEmpty()){
-			objectToCompare = internalStack.pop().getReturnValue();
+			objectToCompare = pop().getReturnValue();
 			//is object is null, it won't equal anything in the stack
 			if(!objectToCompare.equals(object)) {
 				temp.add(objectToCompare);
