@@ -1,4 +1,3 @@
-
 /**
  * A sampleable list can be sampled. 
  * 

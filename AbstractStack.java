@@ -1,4 +1,3 @@
-
 /**
  * An implementation of a stack that uses a {@List} as the underlying
  * data structure.
