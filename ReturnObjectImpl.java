@@ -5,7 +5,7 @@ public class ReturnObjectImpl implements ReturnObject {
 	
 	/**
 	* Constructor for when object to be returned with no error
-	* @param object to be returned
+	* @param content to be returned
 	*/	
 	
 	public ReturnObjectImpl (Object content) {
@@ -15,7 +15,7 @@ public class ReturnObjectImpl implements ReturnObject {
 
 	/**
 	* Constructor for when there is an error
-	* @param ErrorMessage to be set
+	* @param error the ErrorMessage to be set
 	*/	
 	
 	public ReturnObjectImpl (ErrorMessage error) {
