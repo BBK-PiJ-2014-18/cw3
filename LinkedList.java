@@ -89,11 +89,11 @@ public class LinkedList implements List {
 	}
 	
 	/**
-    * Returns the node (LinkedList) before the index
+	* Returns the node (LinkedList) before the index
 	*
 	* @param index to position before
-    * @return the linkedList (node) before the index
-    */ 
+	* @return the linkedList (node) before the index
+	*/ 
 	
 	private LinkedList getNodeBeforeIndex(int index) {
 		int countNodes = 0;
@@ -106,11 +106,11 @@ public class LinkedList implements List {
 	}
 
 	/**
-    * Checks that the index is in bounds and that the list is not empty
+	* Checks that the index is in bounds and that the list is not empty
 	*
 	* @param index to be checked for inbounds (and empty structure)
-    * @return a ReturnObject with appropriate error message
-    */ 
+	* @return a ReturnObject with appropriate error message
+	*/ 
 
 	private ReturnObject checkIndex(int index) {
 		if(isEmpty()) {
@@ -123,11 +123,11 @@ public class LinkedList implements List {
 	}
 
 	/**
-    * Checks that the item being added is not null
+	* Checks that the item being added is not null
 	*
 	* @param item to be checked
-    * @return a ReturnObject with appropriate error message
-    */ 
+	* @return a ReturnObject with appropriate error message
+	*/ 
 	
 	private ReturnObject checkItem(Object item) {
 		if(item == null) {
