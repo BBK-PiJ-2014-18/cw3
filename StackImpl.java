@@ -1,8 +1,8 @@
 public class StackImpl extends AbstractStack {
 
-
 	/**
 	* Creates a new StackImpl based on the list provided. 
+	* @param list provided for internal list
 	*/ 		
 
 	public StackImpl(List list) {
