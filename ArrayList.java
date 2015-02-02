@@ -78,8 +78,8 @@ public class ArrayList implements List {
 	}
 
 	/**
-    * Double the array size when current limit reached
-    */ 	
+	* Double the array size when current limit reached
+	*/ 	
 	
 	private void growArray() {
 		Object[] temp = new Object[items.length * 2];
@@ -90,11 +90,11 @@ public class ArrayList implements List {
 	}
 	
 	/**
-    * Checks that the index is in bounds and that the list is not empty
+	* Checks that the index is in bounds and that the list is not empty
 	*
 	* @param index to be checked for inbounds (and empty structure)
-    * @return a ReturnObject with appropriate error message
-    */ 
+	* @return a ReturnObject with appropriate error message
+	*/ 
 
 	private ReturnObject checkIndex(int index) {
 		if(isEmpty()) {
@@ -107,11 +107,11 @@ public class ArrayList implements List {
 	}
 
 	/**
-    * Checks that the item being added is not null
+	* Checks that the item being added is not null
 	*
 	* @param item to be checked
-    * @return a ReturnObject with appropriate error message
-    */ 
+	* @return a ReturnObject with appropriate error message
+	*/ 
 	
 	private ReturnObject checkItem(Object item) {
 		if(item == null) {
