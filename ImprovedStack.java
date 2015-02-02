@@ -1,3 +1,4 @@
+
 /**
  * An implementation of a stack with additional methods. 
  * 
