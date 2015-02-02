@@ -8,6 +8,7 @@ public class ImprovedStackImpl implements ImprovedStack {
 
 	/**
 	* Creates the ImprovedStackImpl using the list provided 
+	* @param list upon which stack based
 	*/ 		
 
 	public ImprovedStackImpl (List list) {
