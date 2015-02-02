@@ -7,7 +7,7 @@ public class FunctionalLinkedList extends LinkedList implements FunctionalList  
 	}
 
 	@Override
-    public FunctionalList rest() {
+	public FunctionalList rest() {
     	FunctionalList result = new FunctionalLinkedList();
 		for (int i = 1; i < size(); i++) {
 			result.add(this.get(i).getReturnValue());
