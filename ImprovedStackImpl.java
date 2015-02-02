@@ -1,32 +1,37 @@
 public class ImprovedStackImpl implements ImprovedStack {
 
-
 	private Stack internalStack;
 
 	public ImprovedStackImpl (List list) {
 		this.internalStack = new StackImpl(list);
 	}
 
+	@Override
 	public boolean isEmpty() {
 		return internalStack.isEmpty();
 	}
 
+	@Override
 	public int size() {
 		return internalStack.size();
 	}
 	
+	@Override	
 	public void push(Object item) {
 		internalStack.push(item);
 	}
 
+	@Override
 	public ReturnObject top() {
 		return internalStack.top();
 	}
 
+	@Override
 	public ReturnObject pop() {
 		return internalStack.pop();
 	}
 
+	@Override
 	public ImprovedStack reverse() {
 		List temp = new ArrayList();
 		while(!isEmpty()){
@@ -39,6 +44,7 @@ public class ImprovedStackImpl implements ImprovedStack {
 		return result;
 	}
 
+	@Override
 	public void remove(Object object) {
 		List temp = new ArrayList();
 		Object objectToCompare;

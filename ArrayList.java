@@ -9,6 +9,7 @@ public class ArrayList implements List {
 		top = 0;
 	}	
 	
+	@Override
 	public boolean isEmpty() {
 		if(top == 0) {
 			return true;
@@ -17,10 +18,12 @@ public class ArrayList implements List {
 		}			
 	}
 
+	@Override
 	public int size() {
 		return top;
 	}
 
+	@Override
 	public ReturnObject get(int index) {
 		if(checkIndex(index).hasError()) {
 			return checkIndex(index);
@@ -28,6 +31,7 @@ public class ArrayList implements List {
 		return new ReturnObjectImpl(items[index]);
 	}
 
+	@Override
 	public ReturnObject remove(int index) {
 		if(checkIndex(index).hasError()) {
 			return checkIndex(index);
@@ -41,6 +45,7 @@ public class ArrayList implements List {
 		return result;
 	}
 	
+	@Override
 	public ReturnObject add(int index, Object item) {
 		if(checkIndex(index).hasError()) {
 			return checkIndex(index);
@@ -59,6 +64,7 @@ public class ArrayList implements List {
 		return new ReturnObjectImpl(ErrorMessage.NO_ERROR);		
 	}
 
+	@Override
 	public ReturnObject add(Object item) {
 		if(checkItem(item).hasError()) {
 			return checkItem(item);
@@ -70,9 +76,11 @@ public class ArrayList implements List {
 		top++;
 		return new ReturnObjectImpl(ErrorMessage.NO_ERROR);
 	}
-	
-	// TODO JavaDoc
 
+	/**
+    * Double the array size when current limit reached
+    */ 	
+	
 	private void growArray() {
 		Object[] temp = new Object[items.length * 2];
 		for (int i = 0; i < top; i++) {
@@ -81,7 +89,12 @@ public class ArrayList implements List {
 		items = temp;	
 	}
 	
-	// TODO JavaDoc
+	/**
+    * Checks that the index is in bounds and that the list is not empty
+	*
+	* @param index to be checked for inbounds (and empty structure)
+    * @return a ReturnObject with appropriate error message
+    */ 
 
 	private ReturnObject checkIndex(int index) {
 		if(isEmpty()) {
@@ -93,7 +106,12 @@ public class ArrayList implements List {
 		return new ReturnObjectImpl(ErrorMessage.NO_ERROR);
 	}
 
-	// TODO JavaDoc
+	/**
+    * Checks that the item being added is not null
+	*
+	* @param item to be checked
+    * @return a ReturnObject with appropriate error message
+    */ 
 	
 	private ReturnObject checkItem(Object item) {
 		if(item == null) {
@@ -101,17 +119,4 @@ public class ArrayList implements List {
 		}
 		return new ReturnObjectImpl(ErrorMessage.NO_ERROR);
 	}
-	
-	//DELETE THIS....
-	
-/*	public List getArrayListClone() {
-	
-		List newList = new ArrayList();
-		for (int i = 0; i < size(); i++) {
-			newList.add(this.get(i));
-		}	
-		return newList;
-	
-	}
-*/
 }

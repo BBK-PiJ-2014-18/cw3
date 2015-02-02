@@ -36,6 +36,7 @@ public class SampleableListImpl implements SampleableList {
 		return internalList.add(item);
 	}
 
+	@Override
 	public SampleableList sample() {		
 		SampleableList result = new SampleableListImpl();
 		for (int i = 0; i < internalList.size() ; i = i + 2) {
