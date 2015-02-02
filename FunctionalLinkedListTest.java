@@ -9,7 +9,6 @@ public class FunctionalLinkedListTest {
 
 	private FunctionalList list;
 
-	
 	@Before
 	public void setUp() {
 		list = new FunctionalLinkedList();
@@ -87,8 +86,7 @@ public class FunctionalLinkedListTest {
 		ReturnObject result = list.add("something");
 		assertEquals("List should have size 1", 1, list.size());
 	}
-	
-	
+		
 	//testing get(int index) and remove(int index)
 			
 	@Test
@@ -193,7 +191,6 @@ public class FunctionalLinkedListTest {
 		assertEquals(ErrorMessage.INVALID_ARGUMENT, result.getError());
 	}	
 
-
 	@Test
 	public void testAddItemAtIndex1() {
 		ReturnObject itemAdded = list.add("1st");
@@ -210,8 +207,7 @@ public class FunctionalLinkedListTest {
 		assertEquals("4th", list.get(3).getReturnValue());
 		assertEquals("5th", list.get(4).getReturnValue());
 	}
-	
-	
+		
 	@Test
 	public void testAddItemAtIndex0() {
 		ReturnObject itemAdded = list.add("2nd");
@@ -372,27 +368,3 @@ public class FunctionalLinkedListTest {
 		assertEquals("3rd", list.get(2).getReturnValue());
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

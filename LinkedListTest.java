@@ -87,7 +87,6 @@ public class LinkedListTest {
 		assertEquals("List should have size 1", 1, list.size());
 	}
 	
-	
 	//testing get(int index) and remove(int index)
 			
 	@Test
@@ -209,7 +208,6 @@ public class LinkedListTest {
 		assertEquals("5th", list.get(4).getReturnValue());
 	}
 	
-	
 	@Test
 	public void testAddItemAtIndex0() {
 		ReturnObject itemAdded = list.add("2nd");
@@ -310,27 +308,4 @@ public class LinkedListTest {
 		assertEquals(999, list.size());
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

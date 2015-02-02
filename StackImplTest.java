@@ -116,27 +116,3 @@ public class StackImplTest {
 		assertEquals(999, stack.pop().getReturnValue());
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

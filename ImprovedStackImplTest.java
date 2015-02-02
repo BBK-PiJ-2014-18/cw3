@@ -145,7 +145,7 @@ public class ImprovedStackImplTest {
 		assertTrue(backwards.isEmpty());
 	}
 	
-@Test
+	@Test
 	public void testReverseAStackWithOnlyOneItem() {
 		stack.push("1st");
 		Stack backwards = stack.reverse();
@@ -200,27 +200,4 @@ public class ImprovedStackImplTest {
 		assertEquals(4, stack.size());	
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

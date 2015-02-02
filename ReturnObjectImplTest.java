@@ -5,7 +5,6 @@ import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.assertFalse;
 
 public class ReturnObjectImplTest {
-
 	
 	@Test
 	public void testObjectWithContent() {
@@ -22,7 +21,6 @@ public class ReturnObjectImplTest {
 		assertEquals(ErrorMessage.EMPTY_STRUCTURE, result.getError());
 		assertNull(result.getReturnValue());
 	}
-
 }
 
 

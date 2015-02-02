@@ -9,7 +9,6 @@ public class FunctionalArrayListTest {
 
 	private FunctionalList list;
 
-	
 	@Before
 	public void setUp() {
 		list = new FunctionalArrayList();
@@ -87,8 +86,7 @@ public class FunctionalArrayListTest {
 		ReturnObject result = list.add("something");
 		assertEquals("List should have size 1", 1, list.size());
 	}
-	
-	
+		
 	//testing get(int index) and remove(int index)
 			
 	@Test
@@ -372,27 +370,3 @@ public class FunctionalArrayListTest {
 	}
 	
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
