@@ -1,8 +1,28 @@
 public class ArrayList implements List {
 	
+	/**
+	* Used to build initial array in constructor 
+	*/ 		
+	
 	private static int STARTING_ARRAY_SIZE = 10;
+
+	/**
+	* Array of objects to hold items in list 
+	*/ 		
+
 	private Object[] items;
+
+	/**
+	* Holds current size of list
+	*/ 		
+
 	private int top;
+	
+	/**
+	* Constructs the array of Objects for items in list
+	* with starting size of array as specified.  
+	* Sets top to zero as list is empty.
+	*/ 		
 	
 	public ArrayList() {
 		items = new Object[STARTING_ARRAY_SIZE];

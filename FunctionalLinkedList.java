@@ -1,5 +1,6 @@
 public class FunctionalLinkedList extends LinkedList implements FunctionalList  {
 
+
 	@Override
 	public ReturnObject head() {
 		ReturnObject result = this.get(0);

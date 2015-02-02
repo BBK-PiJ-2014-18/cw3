@@ -1,5 +1,10 @@
 public class StackImpl extends AbstractStack {
 
+
+	/**
+	* Creates a new StackImpl based on the list provided. 
+	*/ 		
+
 	public StackImpl(List list) {
 		super(list);
 	}	

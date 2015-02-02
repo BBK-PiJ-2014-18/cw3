@@ -1,6 +1,14 @@
 public class ImprovedStackImpl implements ImprovedStack {
 
+	/**
+	* The stack on which the ImprovedStackImpl is based 
+	*/ 		
+
 	private Stack internalStack;
+
+	/**
+	* Creates the ImprovedStackImpl using the list provided 
+	*/ 		
 
 	public ImprovedStackImpl (List list) {
 		this.internalStack = new StackImpl(list);

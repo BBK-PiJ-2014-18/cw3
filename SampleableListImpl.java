@@ -1,6 +1,14 @@
 public class SampleableListImpl implements SampleableList {
 
+	/**
+	* The data structure where the elements of the list are stored 
+	*/ 		
+
 	private List internalList;
+
+	/**
+	* Creates a new SampleableListImpl with an empty array list as the data structure. 
+	*/ 		
 
 	public SampleableListImpl() {
 		this.internalList = new ArrayList();

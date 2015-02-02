@@ -1,7 +1,20 @@
 public class LinkedList implements List {
 
+	/**
+	* Objects in the list are held in item 
+	*/ 		
+
 	private Object item;
+
+	/**
+	* Pointer to next node in the list 
+	*/ 		
+
 	private LinkedList nextNode;
+
+	/**
+	* Constructs an empty node
+	*/ 		
 
 	public LinkedList() {
 		this.item = null;
